@@ -71,15 +71,14 @@ The directory is organized as follows:
   - [QUEKNO](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/QUEKNO): the original experimental results of benchmark QUEKNO.
   - [RW](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/RW): the original experimental results of benchmark RW.
 - [table](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table): Provides collated experimental data against tables in the paper.
-  - [comp](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/comp): Comparison data between *EffectiveQM* and all competitors.
-  - [cutoff](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/cutoff): The comparative data after taking strict time constraints (refer to the paper), that is the comparative data of the *EffectiveQM-short* version in the paper.
-  - [abalation](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/abalation): Provides data for ablation analysis experiments.
-    - [abalation_for_Potential_Guided](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/abalation/abalation_for_Potential_Guided): The experimental data of the ablation analysis of Potential-guided scoring Function, that is, the comparative data of the *Alt-2* version in the paper.
-    - [abalation_for_State_Aware](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/abalation/abalation_for_State_Aware): The experimental data of the ablation analysis of State Aware, that is, the comparative data of the *Alt-1* version in the paper.
-  - [hyper-para](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para): Experimental data for hyperparameter analysis experiments.
-    - [lambda](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/lambda): Analyzing the experimental data on the hyperparameters of $\lambda$.
-    - [delta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/delta): Analyzing the experimental data on the hyperparameters of $\delta$.
-    - [theta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/theta)：Analyzing the experimental data on the hyperparameters of $\theta$.
-  - [discussion](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion): Experimental data for discussion experiments in paper.
-    - [discussion_on_bridge](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion/discussion_on_bridge): Experimental data for discussion of Bridge effectiveness.
-    - [discussion_on_more_benchmark](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion/discussion_on_more_benchmark): Experimental data discussed for more benchmark sets (i.e., RW, QUEKNO, and QV).
+  - [comp](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/comp): Comparison data between *EffectiveQM* and all competitors.
+  - [abalation](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation): Provides data for ablation analysis experiments.
+    - [abalation_for_Potential_Guided](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation/abalation_for_Potential_Guided): The experimental data of the ablation analysis of Potential-guided scoring Function, that is, the comparative data of the *Alt-2* version in the paper.
+    - [abalation_for_State_Aware](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation/abalation_for_State_Aware): The experimental data of the ablation analysis of State Aware, that is, the comparative data of the *Alt-1* version in the paper.
+  - [hyper-para](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para): Experimental data for hyperparameter analysis experiments.
+    - [lambda](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para/lambda): Analyzing the experimental data on the hyperparameters of $\lambda$.
+    - [delta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para/delta): Analyzing the experimental data on the hyperparameters of $\delta$.
+    - [theta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para/theta)：Analyzing the experimental data on the hyperparameters of $\theta$.
+  - [discussion](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion): Experimental data for discussion experiments in paper.
+    - [discussion_on_bridge](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion/discussion_on_bridge): Experimental data for discussion of Bridge effectiveness.
+    - [discussion_on_more_benchmark](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion/discussion_on_more_benchmark): Experimental data discussed for more benchmark sets (i.e., RW, QUEKNO, and QV).
