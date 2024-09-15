@@ -48,6 +48,7 @@ class CouplingGraph{
         void build_IBM_Johannesburg();
         void build_IBM_Penguin_v1();
         void build_IBM_Penguin_v2();
+        void build_torino();
 
         void build_nXn_grid(int n);
         //build testing coupling graph of square

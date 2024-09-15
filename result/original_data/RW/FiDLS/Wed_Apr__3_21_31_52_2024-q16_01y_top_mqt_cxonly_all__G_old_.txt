@@ -1,0 +1,26 @@
+('QFilter, GVal, SIZE, initial_mapping  =', '01y', True, 'all', 'top')
+('lev, slayer, gamma, stop, anchor =', 3, 0, 0, 10, True)
+In this test, we use Type 01y filter and top initial mapping for all circuits on q16
+*****************************************
+Wed Apr  3 21:31:52 2024
+(1, 'su2random_nativegates_ibm_qiskit_opt0_10.qasm', 10, 135, 282, 147, 5.58, 2.0889)
+(2, 'qnn_nativegates_ibm_qiskit_opt0_10.qasm', 10, 189, 306, 117, 3.7, 1.619)
+(3, 'portfoliovqe_nativegates_ibm_qiskit_opt0_10.qasm', 10, 135, 282, 147, 3.92, 2.0889)
+(4, 'ae_nativegates_ibm_qiskit_opt0_10.qasm', 10, 90, 135, 45, 0.9, 1.5)
+(5, 'ghz_nativegates_ibm_qiskit_opt0_10.qasm', 10, 9, 9, 0, 0.0, 1.0)
+(6, 'portfolioqaoa_nativegates_ibm_qiskit_opt0_10.qasm', 10, 270, 438, 168, 2.79, 1.6222)
+(7, 'twolocalrandom_nativegates_ibm_qiskit_opt0_10.qasm', 10, 135, 282, 147, 3.34, 2.0889)
+(8, 'qft_nativegates_ibm_qiskit_opt0_10.qasm', 10, 105, 162, 57, 0.65, 1.5429)
+(9, 'qaoa_nativegates_ibm_qiskit_opt0_10.qasm', 10, 40, 40, 0, 0.0, 1.0)
+(10, 'qwalk-noancilla_nativegates_ibm_qiskit_opt0_10.qasm', 10, 18078, 20967, 2889, 72.62, 1.1598)
+(11, 'dj_nativegates_ibm_qiskit_opt0_10.qasm', 10, 9, 15, 6, 0.01, 1.6667)
+(12, 'qpeexact_nativegates_ibm_qiskit_opt0_10.qasm', 10, 98, 137, 39, 1.08, 1.398)
+(13, 'graphstate_nativegates_ibm_qiskit_opt0_10.qasm', 10, 10, 10, 0, 0.0, 1.0)
+(14, 'vqe_nativegates_ibm_qiskit_opt0_10.qasm', 10, 18, 18, 0, 0.0, 1.0)
+(15, 'realamprandom_nativegates_ibm_qiskit_opt0_10.qasm', 10, 135, 282, 147, 3.35, 2.0889)
+(16, 'grover-noancilla_nativegates_ibm_qiskit_opt0_10.qasm', 10, 39032, 43610, 4578, 137.28, 1.1173)
+(17, 'wstate_nativegates_ibm_qiskit_opt0_10.qasm', 10, 18, 18, 0, 0.0, 1.0)
+(18, 'qftentangled_nativegates_ibm_qiskit_opt0_10.qasm', 10, 114, 177, 63, 1.55, 1.5526)
+(19, 'qpeinexact_nativegates_ibm_qiskit_opt0_10.qasm', 10, 102, 153, 51, 0.41, 1.5)
+The average ratio is 67323:58722 = 1.1465
+The time spent for this test is 237.18 : 238.96

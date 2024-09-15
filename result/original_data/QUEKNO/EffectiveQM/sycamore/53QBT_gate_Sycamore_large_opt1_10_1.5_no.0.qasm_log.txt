@@ -1,0 +1,326 @@
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 0
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 927 in time: 4.977s.
+[INFO] better ans: 633 in time: 7.685s.
+[INFO] better ans: 591 in time: 16.757s.
+[INFO] better ans: 564 in time: 19.772s.
+[INFO] better ans: 480 in time: 25.954s.
+[INFO] better ans: 450 in time: 28.045s.
+[INFO] better ans: 417 in time: 30.222s.
+[INFO] better ans: 414 in time: 42.468s.
+[INFO] better ans: 411 in time: 47.217s.
+[INFO] better ans: 387 in time: 51.242s.
+[INFO] better ans: 372 in time: 59.775s.
+[INFO] better ans: 369 in time: 102.28s.
+[INFO] better ans: 354 in time: 104.549s.
+[INFO] better ans: 330 in time: 109.379s.
+[INFO] better ans: 315 in time: 204.072s.
+[INFO] better ans: 303 in time: 284.318s.
+[INFO] better ans: 294 in time: 287.069s.
+[INFO] better ans: 273 in time: 292.539s.
+[INFO] better ans: 270 in time: 297.218s.
+[INFO] better ans: 267 in time: 304.113s.
+[INFO] better ans: 258 in time: 307.75s.
+[INFO] better ans: 246 in time: 317.516s.
+[INFO] better ans: 240 in time: 321.393s.
+[INFO] better ans: 204 in time: 333.139s.
+[INFO] better ans: 201 in time: 345.453s.
+[INFO] better ans: 186 in time: 349.52s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 186
+Size of the best physical circuit:392
+Direction of best mapping: 1
+[INFO] restart count: 1494
+Time cost :3609.24 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 1
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1212 in time: 4.125s.
+[INFO] better ans: 777 in time: 6s.
+[INFO] better ans: 630 in time: 8.114s.
+[INFO] better ans: 519 in time: 10.427s.
+[INFO] better ans: 408 in time: 11.983s.
+[INFO] better ans: 396 in time: 16.818s.
+[INFO] better ans: 363 in time: 18.53s.
+[INFO] better ans: 351 in time: 101.738s.
+[INFO] better ans: 312 in time: 104.05s.
+[INFO] better ans: 297 in time: 106.968s.
+[INFO] better ans: 282 in time: 249.955s.
+[INFO] better ans: 264 in time: 519.096s.
+[INFO] better ans: 255 in time: 522.684s.
+[INFO] better ans: 228 in time: 526.717s.
+[INFO] better ans: 219 in time: 2514.89s.
+[INFO] better ans: 186 in time: 2516.27s.
+[INFO] better ans: 153 in time: 3129.71s.
+[INFO] better ans: 138 in time: 3130.38s.
+[INFO] better ans: 93 in time: 3131.24s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 93
+Size of the best physical circuit:299
+Direction of best mapping: 0
+[INFO] restart count: 1570
+Time cost :3614.21 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 2
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1098 in time: 2.927s.
+[INFO] better ans: 696 in time: 7.241s.
+[INFO] better ans: 459 in time: 9.813s.
+[INFO] better ans: 441 in time: 13.356s.
+[INFO] better ans: 363 in time: 15.752s.
+[INFO] better ans: 339 in time: 113.57s.
+[INFO] better ans: 294 in time: 118.996s.
+[INFO] better ans: 276 in time: 127.533s.
+[INFO] better ans: 264 in time: 220.371s.
+[INFO] better ans: 231 in time: 223.451s.
+[INFO] better ans: 216 in time: 513.498s.
+[INFO] better ans: 201 in time: 518.617s.
+[INFO] better ans: 198 in time: 663.554s.
+[INFO] better ans: 195 in time: 672.085s.
+[INFO] better ans: 186 in time: 674.067s.
+[INFO] better ans: 177 in time: 675.812s.
+[INFO] better ans: 168 in time: 677.919s.
+[INFO] better ans: 162 in time: 690.196s.
+[INFO] better ans: 105 in time: 3187.28s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 105
+Size of the best physical circuit:311
+Direction of best mapping: 0
+[INFO] restart count: 1451
+Time cost :3602.97 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 3
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1104 in time: 2.909s.
+[INFO] better ans: 699 in time: 5.74s.
+[INFO] better ans: 666 in time: 8.363s.
+[INFO] better ans: 564 in time: 12.321s.
+[INFO] better ans: 543 in time: 13.814s.
+[INFO] better ans: 492 in time: 19.596s.
+[INFO] better ans: 423 in time: 26.438s.
+[INFO] better ans: 375 in time: 27.955s.
+[INFO] better ans: 363 in time: 32.304s.
+[INFO] better ans: 354 in time: 64.215s.
+[INFO] better ans: 342 in time: 71.449s.
+[INFO] better ans: 339 in time: 76.801s.
+[INFO] better ans: 309 in time: 80.994s.
+[INFO] better ans: 252 in time: 84.322s.
+[INFO] better ans: 234 in time: 208.59s.
+[INFO] better ans: 228 in time: 209.845s.
+[INFO] better ans: 180 in time: 211.246s.
+[INFO] better ans: 159 in time: 215.329s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 159
+Size of the best physical circuit:365
+Direction of best mapping: 0
+[INFO] restart count: 1543
+Time cost :3607.61 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 4
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 942 in time: 2.342s.
+[INFO] better ans: 687 in time: 6.66s.
+[INFO] better ans: 576 in time: 9.655s.
+[INFO] better ans: 564 in time: 11.796s.
+[INFO] better ans: 504 in time: 14.258s.
+[INFO] better ans: 432 in time: 17.52s.
+[INFO] better ans: 390 in time: 20.682s.
+[INFO] better ans: 387 in time: 32.275s.
+[INFO] better ans: 342 in time: 41.427s.
+[INFO] better ans: 339 in time: 48.053s.
+[INFO] better ans: 288 in time: 59.595s.
+[INFO] better ans: 276 in time: 64.081s.
+[INFO] better ans: 252 in time: 66.094s.
+[INFO] better ans: 231 in time: 71.431s.
+[INFO] better ans: 201 in time: 2538.86s.
+[INFO] better ans: 156 in time: 2539.7s.
+[INFO] better ans: 135 in time: 2540.18s.
+[INFO] better ans: 99 in time: 2541.43s.
+[INFO] better ans: 96 in time: 2542.11s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 96
+Size of the best physical circuit:302
+Direction of best mapping: 1
+[INFO] restart count: 1571
+Time cost :3605.51 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 5
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1011 in time: 3.647s.
+[INFO] better ans: 702 in time: 6.404s.
+[INFO] better ans: 621 in time: 9.116s.
+[INFO] better ans: 543 in time: 11.661s.
+[INFO] better ans: 468 in time: 13.284s.
+[INFO] better ans: 387 in time: 45.126s.
+[INFO] better ans: 357 in time: 48.143s.
+[INFO] better ans: 309 in time: 49.816s.
+[INFO] better ans: 306 in time: 56.158s.
+[INFO] better ans: 285 in time: 111.823s.
+[INFO] better ans: 261 in time: 637.988s.
+[INFO] better ans: 210 in time: 640.739s.
+[INFO] better ans: 198 in time: 1261.16s.
+[INFO] better ans: 189 in time: 2420.39s.
+[INFO] better ans: 168 in time: 2426.08s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 168
+Size of the best physical circuit:374
+Direction of best mapping: 1
+[INFO] restart count: 1346
+Time cost :3620.46 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 6
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1059 in time: 4.349s.
+[INFO] better ans: 702 in time: 9.166s.
+[INFO] better ans: 624 in time: 12.157s.
+[INFO] better ans: 591 in time: 15.38s.
+[INFO] better ans: 513 in time: 17.087s.
+[INFO] better ans: 456 in time: 26.336s.
+[INFO] better ans: 438 in time: 32.571s.
+[INFO] better ans: 426 in time: 36.216s.
+[INFO] better ans: 414 in time: 38.131s.
+[INFO] better ans: 375 in time: 45.296s.
+[INFO] better ans: 336 in time: 105.722s.
+[INFO] better ans: 300 in time: 112.679s.
+[INFO] better ans: 276 in time: 120.079s.
+[INFO] better ans: 240 in time: 532.493s.
+[INFO] better ans: 195 in time: 534.13s.
+[INFO] better ans: 150 in time: 535.808s.
+[INFO] better ans: 147 in time: 897.034s.
+[INFO] better ans: 129 in time: 902.407s.
+[INFO] better ans: 78 in time: 902.822s.
+[INFO] better ans: 66 in time: 903.365s.
+[INFO] better ans: 54 in time: 903.916s.
+[INFO] better ans: 48 in time: 905.579s.
+[INFO] better ans: 45 in time: 905.977s.
+[INFO] better ans: 42 in time: 907.239s.
+[INFO] better ans: 39 in time: 908.237s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 39
+Size of the best physical circuit:245
+Direction of best mapping: 1
+[INFO] restart count: 1504
+Time cost :3603.26 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 7
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1191 in time: 4.025s.
+[INFO] better ans: 693 in time: 8.672s.
+[INFO] better ans: 633 in time: 11.183s.
+[INFO] better ans: 558 in time: 13.715s.
+[INFO] better ans: 546 in time: 20.238s.
+[INFO] better ans: 540 in time: 22.355s.
+[INFO] better ans: 456 in time: 25.66s.
+[INFO] better ans: 426 in time: 28.65s.
+[INFO] better ans: 402 in time: 37.409s.
+[INFO] better ans: 387 in time: 47.656s.
+[INFO] better ans: 378 in time: 50.015s.
+[INFO] better ans: 375 in time: 53.166s.
+[INFO] better ans: 357 in time: 58.311s.
+[INFO] better ans: 342 in time: 67.058s.
+[INFO] better ans: 339 in time: 224.193s.
+[INFO] better ans: 300 in time: 231.001s.
+[INFO] better ans: 294 in time: 395.52s.
+[INFO] better ans: 273 in time: 562.399s.
+[INFO] better ans: 234 in time: 613.561s.
+[INFO] better ans: 213 in time: 616.133s.
+[INFO] better ans: 210 in time: 617.344s.
+[INFO] better ans: 207 in time: 2616.45s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 207
+Size of the best physical circuit:413
+Direction of best mapping: 0
+[INFO] restart count: 1485
+Time cost :3629.97 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 8
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 1146 in time: 5.464s.
+[INFO] better ans: 783 in time: 8.794s.
+[INFO] better ans: 531 in time: 10.617s.
+[INFO] better ans: 462 in time: 20.097s.
+[INFO] better ans: 432 in time: 23.834s.
+[INFO] better ans: 381 in time: 27.533s.
+[INFO] better ans: 363 in time: 34.372s.
+[INFO] better ans: 345 in time: 78.589s.
+[INFO] better ans: 318 in time: 86.631s.
+[INFO] better ans: 300 in time: 185.878s.
+[INFO] better ans: 288 in time: 199.198s.
+[INFO] better ans: 273 in time: 213.989s.
+[INFO] better ans: 231 in time: 217.903s.
+[INFO] better ans: 210 in time: 220.139s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 210
+Size of the best physical circuit:416
+Direction of best mapping: 1
+[INFO] restart count: 1269
+Time cost :3618.31 seconds.
+
+
+
+[INFO] parameter: IN_LIMIT: 5 MAX_LOOK_SIZE: 4 C_MAX: 500
+Seed: 9
+The number of logic qubits:53
+The number of CNOT gates:206
+[INFO] better ans: 972 in time: 3.69s.
+[INFO] better ans: 663 in time: 6.255s.
+[INFO] better ans: 594 in time: 8.644s.
+[INFO] better ans: 489 in time: 11.433s.
+[INFO] better ans: 453 in time: 12.918s.
+[INFO] better ans: 378 in time: 15.37s.
+[INFO] better ans: 357 in time: 102.523s.
+[INFO] better ans: 339 in time: 104.859s.
+[INFO] better ans: 327 in time: 205.29s.
+[INFO] better ans: 324 in time: 311.583s.
+[INFO] better ans: 312 in time: 314.892s.
+[INFO] better ans: 297 in time: 317.391s.
+[INFO] better ans: 294 in time: 809.551s.
+[INFO] better ans: 267 in time: 811.791s.
+[INFO] better ans: 243 in time: 903.958s.
+[INFO] better ans: 237 in time: 916.644s.
+[INFO] better ans: 234 in time: 921.212s.
+[INFO] better ans: 207 in time: 924.704s.
+[INFO] better ans: 189 in time: 1055.12s.
+[INFO] check over. Circult has no fault.
+Cnot gate count: 189
+Size of the best physical circuit:395
+Direction of best mapping: 1
+[INFO] restart count: 1508
+Time cost :3612.11 seconds.
+
+
+

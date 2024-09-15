@@ -197,6 +197,8 @@ void CouplingGraph::build_IBM_Penguin_v2()
     fin.open("./device/Penguin_v2",ios::in);
     int n,m;
     fin>>n>>m;
+    // assert(n==133);
+    // assert(m==150);
     positions=n;
     adjList.resize(positions);
     deg.resize(positions);
@@ -210,6 +212,28 @@ void CouplingGraph::build_IBM_Penguin_v2()
     }
     initDist();
     fin.close();
+    // cout<<"[INFO] build IBM Torino Over"<<endl;
+}
+
+void CouplingGraph::build_torino(){
+    fstream fin;
+    fin.open("./device/torino",ios::in);
+    int n,m;
+    fin>>n>>m;
+    positions=n;
+    adjList.resize(positions);
+    deg.resize(positions);
+    while(m--){
+        int u,v;
+        fin>>u>>v;
+        adjList[u].push_back(v);
+        adjList[v].push_back(u);
+        deg[u]+=1;
+        deg[v]+=1;
+    }
+    initDist();
+    fin.close();
+    cout<<"[INFO] build IBM Torino Over"<<endl;
 }
 void CouplingGraph::build_nXn_grid(int n=17)
 {

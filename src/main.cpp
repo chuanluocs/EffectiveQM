@@ -23,12 +23,16 @@ using namespace std;
 
 // components
 
-// GREEDY
-#define GREEDY // ues dynamic greedy tech
-//--------------------GREEDY--------------------
+
 
 #define RANDOM_INIT // ues random init
 //--------------------INIT--------------------
+
+// abalation
+// #define ABALATION_BRIDGE
+// #define ABALATION_GREEDY
+// #define ABALATION_POTENTIAL
+// #define EXTREMELY_SHORT
 
 
 // parameters
@@ -56,6 +60,10 @@ const double cutoff_time=3600;
 
 int ** interactMat;
 int * qubit_gate_cnt;
+
+int total_bridge_count;
+int best_ans_bridge_count;
+int cur_ans_bridge_count;
 
 // debug function
 void debugMapping(const vector<int>&qubits){
@@ -142,6 +150,7 @@ void getInteractionMatrix(const vector<gate> gateList, int ** interactMat, int s
         gate g1 = gateList[i];
         int c1 = g1.control;
         int t1 = g1.target;
+        // cout<<c1<<' '<<t1<<endl;
         interactMat[c1][t1]++;
         interactMat[t1][c1]++;
         qubit_gate_cnt[c1]++;
@@ -370,7 +379,7 @@ set<int>exe_st;
 // calculate the number of executed gates and the number of front gates
 // and log the executed gates
 pair<int,int> numOfExecutedAndFrontGate_3_3_log(vector<list<gate> > & lines, const vector<int> & locations, int ** dist)
-{
+{  
     int exeNum = 0;
     int gateNum = 0;
     int fixed = 0;
@@ -1035,6 +1044,72 @@ tuple<int,int,int> costOfInsertedSwap_L0_Nexe_Frontgate_3_3_log(vector<list<gate
     return {funcV1,funcV2,funcV3};
 }
 
+// used in abalation potenial version
+// select the best gate in the candidate gates
+weightedGate selectBestGate(const set<weightedGate > & candiSwap,
+                            vector<list<gate> > & lines,
+                            int maxLookSize,  const vector<int> & qubits,
+                            const vector<int> & locations,  int ** dist)
+{
+    vector<weightedGate > bestGates;
+    weightedGate  bestGate;
+    int maxCost = -0x3f3f3f3f; 
+    // in parctice, some gate is far lower than 0, so we set the initial value to a very low value
+    // this find may tell us the scoring function may be not perfect. we can try to improve it.
+    
+    vector<vector<gate> > layers = getFrontLayers(lines, maxLookSize);
+    // logout<<"get layers over"<<endl;
+    // logout<<"let's see candiSwap"<<endl;
+    // for(auto i : candiSwap){
+        // logout<<i.type<<' '<<i.q1<<' '<<i.q2<<' '<<i.weight<<endl;
+    // }
+    for(set<weightedGate>::iterator it = candiSwap.begin(); it!=candiSwap.end(); it++)
+    {
+        // logout<<"one gate"<<endl;
+        weightedGate gate1 = * it;
+        int effOfGate1 = -1;
+        if(gate1.type == "SWAP")
+        {
+            // logout<<"is SWAP"<<endl;
+            pair<int,int> equivSwap = make_pair(gate1.q1,gate1.q2);
+            auto gateValue = costOfInsertedSwap_L0_Nexe_Frontgate_3_3_log(lines,equivSwap,layers,qubits,locations,dist);
+            
+            effOfGate1 = get<0>(gateValue)+get<1>(gateValue);
+            // logout<<"get it's value, is "<<effOfGate1<<endl;
+        }
+        else if(gate1.type == "CNOT")
+        {
+            // logout<<"is CNOT"<<endl;
+            pair<int,int> equivCnot = make_pair(gate1.q1,gate1.q2);
+            auto gateValue = costOfInsertedCnot_L0_Nexe_Frontgate(lines,equivCnot,qubits,locations,dist);
+            effOfGate1 = get<0>(gateValue)+get<1>(gateValue);
+            // logout<<"get it's value, is "<<effOfGate1<<endl;
+        }
+
+
+        if(effOfGate1 > maxCost)
+        {
+            // logout<<"has a fesaible gate"<<endl;
+            maxCost = effOfGate1;
+            bestGates.clear();
+            bestGates.push_back(gate1);
+        }
+        else if(effOfGate1 == maxCost)
+        {
+            bestGates.push_back(gate1);
+        }
+    }
+    // logout<<"bestGates size is "<<bestGates.size()<<endl;
+    // if (bestGates.size()==0){
+        // logout<<"haha, i know why"<<endl;
+    // }
+    if(bestGates.size()>1)
+        bestGate = bestGates[rand() % bestGates.size()];
+    else
+        bestGate =  bestGates[0];
+    bestGate.weight = maxCost;
+    return bestGate;
+}
 
 /**
 *Insert a SWAP gate into the resultant circuit
@@ -1063,43 +1138,43 @@ void inserBridgeCnot(int c, int t, vector<int> & linkPath, vector<gate> & finalL
 }
 
 
+// 被弃用？
+// auto getValuedGateList_L0_Nexe_FrontGate(const set<weightedGate > & candiSwap,
+//                             vector<list<gate> > & lines,
+//                             int maxLookSize,  const vector<int> & qubits,
+//                             const vector<int> & locations,  int ** dist)
+// {
+//     maxLookSize = MAX_LOOK_SIZE;
+//     vector<weightedGate > bestGates;
+//     weightedGate  bestGate;
+//     vector<vector<gate> > layers = getFrontLayers(lines, maxLookSize);
 
-auto getValuedGateList_L0_Nexe_FrontGate(const set<weightedGate > & candiSwap,
-                            vector<list<gate> > & lines,
-                            int maxLookSize,  const vector<int> & qubits,
-                            const vector<int> & locations,  int ** dist)
-{
-    maxLookSize = MAX_LOOK_SIZE;
-    vector<weightedGate > bestGates;
-    weightedGate  bestGate;
-    vector<vector<gate> > layers = getFrontLayers(lines, maxLookSize);
+//     using value_gate = pair<weightedGate, tuple<int,int,int> >;
+//     vector<value_gate>candidate_gate;
+//     for(set<weightedGate>::iterator it = candiSwap.begin(); it!=candiSwap.end(); it++)
+//     {
+//         weightedGate gate1 = * it;
+//         // logout<<"[TEST] candidate gate: "<<gate1.type<<' '<<gate1.q1<<' '<<gate1.q2<<endl;
+//         auto effOfGate1 = make_tuple(0,0,0);
+//         if(gate1.type == "SWAP")
+//         {
+//             pair<int,int> equivSwap = make_pair(gate1.q1,gate1.q2);
+//             // effOfGate1 = costOfInsertedSwapSplit(lines,equivSwap,qubits,locations,dist);
+//             effOfGate1 = costOfInsertedSwap_L0_Nexe_Frontgate(lines,equivSwap,layers,qubits,locations,dist);
 
-    using value_gate = pair<weightedGate, tuple<int,int,int> >;
-    vector<value_gate>candidate_gate;
-    for(set<weightedGate>::iterator it = candiSwap.begin(); it!=candiSwap.end(); it++)
-    {
-        weightedGate gate1 = * it;
-        // logout<<"[TEST] candidate gate: "<<gate1.type<<' '<<gate1.q1<<' '<<gate1.q2<<endl;
-        auto effOfGate1 = make_tuple(0,0,0);
-        if(gate1.type == "SWAP")
-        {
-            pair<int,int> equivSwap = make_pair(gate1.q1,gate1.q2);
-            // effOfGate1 = costOfInsertedSwapSplit(lines,equivSwap,qubits,locations,dist);
-            effOfGate1 = costOfInsertedSwap_L0_Nexe_Frontgate(lines,equivSwap,layers,qubits,locations,dist);
-
-        }
-        else if(gate1.type == "CNOT")
-        {
-            pair<int,int> equivCnot = make_pair(gate1.q1,gate1.q2);
-            // effOfGate1 = costOfInsertedCnotSecondOnly(lines,equivCnot,qubits,locations,dist);
-            effOfGate1 = costOfInsertedCnot_L0_Nexe_Frontgate(lines,equivCnot,qubits,locations,dist);
-        }
-        // logout<<"value: "<<effOfGate1.first<<' '<<effOfGate1.second<<endl;
-        candidate_gate.push_back({gate1,effOfGate1});
-    }
-    // logout<<"deal over"<<endl;
-    return candidate_gate;
-}
+//         }
+//         else if(gate1.type == "CNOT")
+//         {
+//             pair<int,int> equivCnot = make_pair(gate1.q1,gate1.q2);
+//             // effOfGate1 = costOfInsertedCnotSecondOnly(lines,equivCnot,qubits,locations,dist);
+//             effOfGate1 = costOfInsertedCnot_L0_Nexe_Frontgate(lines,equivCnot,qubits,locations,dist);
+//         }
+//         // logout<<"value: "<<effOfGate1.first<<' '<<effOfGate1.second<<endl;
+//         candidate_gate.push_back({gate1,effOfGate1});
+//     }
+//     // logout<<"deal over"<<endl;
+//     return candidate_gate;
+// }
 
 
 
@@ -1131,7 +1206,11 @@ auto getValuedGateList_L0_Nexe_FrontGate_3_3_log(const set<weightedGate > & cand
         else if(gate1.type == "CNOT")
         {
             pair<int,int> equivCnot = make_pair(gate1.q1,gate1.q2);
-            effOfGate1 = costOfInsertedCnot_L0_Nexe_Frontgate(lines,equivCnot,qubits,locations,dist);
+            #ifdef ABALATION_BRIDGE 
+
+            #else
+                effOfGate1 = costOfInsertedCnot_L0_Nexe_Frontgate(lines,equivCnot,qubits,locations,dist);
+            #endif
         }
         candidate_gate.push_back({gate1,effOfGate1});
     }
@@ -1435,6 +1514,9 @@ bool doTwoInsertOperate_new_func_fixed_abalation( vector<list<gate> >  &lines,
         }
         else{
             insert_CNOT_to_phy(bestGate.first,phyCir,nCnots,qubits,locations,p_cg,lines,activeGates,activeLines);
+            // to do bridge
+            total_bridge_count++;
+            cur_ans_bridge_count++;
         }
         checkActivegates(lines,activeGates, phyCir,activeLines, locations, dist);
         findActivegates(lines,activeGates,phyCir,activeLines, locations,dist);
@@ -1447,6 +1529,9 @@ bool doTwoInsertOperate_new_func_fixed_abalation( vector<list<gate> >  &lines,
         }
         else if(bestGate.second.type == "CNOT"){
             insert_CNOT_to_phy(bestGate.second,phyCir,nCnots,qubits,locations,p_cg,lines,activeGates,activeLines);
+            // to do bridge
+            total_bridge_count++;
+            cur_ans_bridge_count++;
         }
         else if(bestGate.second.type == "NULL"){
 
@@ -1457,8 +1542,14 @@ bool doTwoInsertOperate_new_func_fixed_abalation( vector<list<gate> >  &lines,
     // logout<<"-----------------"<<endl<<endl;
     return false;
 }
-int swapAndCnotBasedMapping_advance(int nqubits, vector<gate> & gateList, CouplingGraph * p_cg, 
-                                    vector<gate> & phyCir, int ** dist, vector<int> & qubits, vector<int> & locations)
+
+
+
+
+int swapAndCnotBasedMapping_advance(
+    int nqubits, vector<gate> & gateList, 
+    CouplingGraph * p_cg, vector<gate> & phyCir, 
+    int ** dist, vector<int> & qubits, vector<int> & locations)
 {
 
     int nCnots = 0;
@@ -1473,8 +1564,6 @@ int swapAndCnotBasedMapping_advance(int nqubits, vector<gate> & gateList, Coupli
     while(true)
     {
         decision_count++;
-        
-        //final version
         if(doTwoInsertOperate_new_func_fixed_abalation(lines,activeGates,activeLines,p_cg,qubits,locations,dist,phyCir,nCnots))
             break;
     }
@@ -1644,7 +1733,6 @@ void answer_checker(int minCnotCount,vector<gate> &gateList,
 
 
 
-
 // Begin of algorithm
 void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_LIMIT)
 {
@@ -1661,7 +1749,7 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     int ** dist;
 
     // Read qasm file into gate list
-    ciucuitFileName = "./"+ciucuitFileName;
+    // ciucuitFileName = "./"+ciucuitFileName;
     QASMReader reader(std::move(ciucuitFileName));
     reader.parse(gateList);
     int nqubits = reader.getVerNum();//number of logical
@@ -1669,6 +1757,16 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     logout << "Seed: "<<global_algorithm_seed<<endl;
     logout << "The number of logic qubits:" << nqubits << endl;
     logout << "The number of CNOT gates:" << gateList.size() << endl;
+    #ifdef ABALATION_POTENTIAL
+    logout << "abalation potential"<<endl;    
+    #endif
+    #ifdef ABALATION_BRIDGE
+    logout<<"abalation bridge"<<endl;
+    #endif
+    #ifdef EXTREMELY_SHORT
+    logout<<"extremely short"<<endl;
+    exit(-1);
+    #endif
     
     //generate coupling map , distance matrix and interaction matrix
 
@@ -1702,6 +1800,9 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     else if(selected_device_enum == "SYCAMORE"){
         cg.build_Google_Sycamore();
     }
+    else if(selected_device_enum == "torino"){
+        cg.build_torino();
+    }
     else{
         logout<<"[ERROR] no such device"<<endl;
         exit(-1);
@@ -1714,9 +1815,14 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     }
     
     int nlocations = cg.getPositions();
+    // cout<<"[INFO] start computeDist"<<endl;
     cg.computeDist();
+    // cout<<"[INFO] start getDist"<<endl;
     dist = cg.getDist();
+    // cout<<"[INFO] start initInteractionMatrix"<<endl;
     interactMat = initInteractionMatrix(nqubits);
+    // cout<<"nqubits: "<<nqubits<<endl;
+    // cout<<"[INFO] start getInteractionMatrix"<<endl;
     getInteractionMatrix(gateList,interactMat);
 
     //Initialize qubits[] and locations[]
@@ -1728,8 +1834,9 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     int dirOfBest = 0;
     vector<gate> phyCirOfBest; 
     int noBetterCounter = 0; 
-
+    // cout<<"[INFO] start randInitMapping"<<endl;
     randInitMapping(qubits,locations,nlocations,nqubits,cg);
+    // cout<<"[INFO] end randInitMapping"<7<endl;
     int iter_count = 0;
 
     for(int _=0;;_++)
@@ -1737,7 +1844,7 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
 
 
         PerurbationByShuffle(qubits,locations,nlocations,nqubits,cg);
-       
+        // cout<<"[INFO] end Shuffle"<<endl;
         noBetterCounter++;
         bool isNeedNoGate = false;
         int inner_count = 0;
@@ -1753,7 +1860,11 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
             iter_count++;
             inner_count++;
             vector<int> tmpQubitsArr = qubits;
+            #ifndef ABALATION_POTENTIAL
             int curCnotCount = swapAndCnotBasedMapping_advance(nqubits, gateList, &cg, phyCir, dist, qubits, locations);
+            #else
+            // 
+            #endif
             if(curCnotCount < minCnotCount)
             {
                 noBetterCounter = 0;
@@ -1761,7 +1872,7 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
                 phyCirOfBest = phyCir;
                 current_time = chrono::system_clock::now();
                 auto time_cost=((double)chrono::duration_cast<chrono::milliseconds>(current_time - start_time).count())/1000;
-                logout<<"[INFO] better ans: "<<minCnotCount<<" in time: "<<time_cost<<"s."<<endl;
+                logout<<"[INFO] better ans: "<<minCnotCount<<" in time: "<<time_cost<<"s. in iter "<<iter_count<<endl;
                 if(i%2 == 0) //forward traversal
                 {
                     dirOfBest = 0;
@@ -1772,7 +1883,13 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
                     dirOfBest = 1;
                     qubitsArrOfBest = qubits;
                 }
+                // to do bridge
+                best_ans_bridge_count = cur_ans_bridge_count;
+                cur_ans_bridge_count = 0;
+
             }
+            // to do bridge
+            cur_ans_bridge_count = 0;
 
             reverse(gateList.begin(),gateList.end());
             phyCir.clear();
@@ -1811,6 +1928,8 @@ void EffectiveQMFramework(string ciucuitFileName, int outLimit, int inLimit=IN_L
     logout << "Size of the best physical circuit:" << phyCirOfBest.size() << endl;
     logout << "Direction of best mapping: " << dirOfBest << endl;//最优方向
     logout << "[INFO] restart count: "<<iter_count<<endl;
+    logout << "[INFO] total bridge decision count: "<<total_bridge_count<<endl;
+    logout << "[INFO] best decision bridge count: "<<best_ans_bridge_count<<endl;
     //clear job
     clearInteractionMatrix(interactMat,nqubits);
 }
@@ -1840,15 +1959,20 @@ int doExperiments(vector<string>files,int seed,string log_path,int epoch=1){
         auto p=filenameSplit(file);
         decision_count=0;
         cout<<"Benchmark circuit " << p.second << " is in mapping...."<<endl;
-        string logfile = "./" +log_path;
+        // string logfile = "./" +log_path;
+        string logfile = log_path + '/' + p.second + "_log.txt";
         logout.open(logfile,ios::app);
         for(int i=0;i<epoch;i++){
             start_time = system_clock::now();
 
-            #ifdef GREEDY
-            EffectiveQMFramework(file,1000);
+            #ifndef ABALATION_GREEDY
+                #ifdef EXTREMELY_SHORT
+                // 
+                #else
+                EffectiveQMFramework(file,1000);
+                #endif
             #else
-                // do nothing
+            // 
             #endif
 
             current_time = system_clock::now();

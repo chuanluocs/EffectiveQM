@@ -34,7 +34,13 @@ public:
     }
 
     int getlinenum(){return linenum;}
-    int getVerNum(){return vertices.size();}
+    int getVerNum(){
+        int max_element = -1;
+        for(auto i:vertices){
+            if(i>max_element) max_element = i;
+        }
+        return max_element+1;
+    }
     /*read reduced quantum circuits containing only CNOT gates*/
     void parse(vector<gate>& gateList);
 };

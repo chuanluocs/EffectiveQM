@@ -1,0 +1,14 @@
+('QFilter, GVal, SIZE, initial_mapping  =', '01y', True, 'all', 'top')
+('lev, slayer, gamma, stop, anchor =', 3, 0, 0, 10, True)
+In this test, we use Type 01y filter and top initial mapping for all circuits on torino
+*****************************************
+Sat Jul 13 23:34:50 2024
+(1, 'qpeexact_nativegates_ibm_qiskit_opt0_40.qasm', 40, 1617, 8400, 6783, 320.54, 5.1948)
+(7, 'qpeinexact_nativegates_ibm_qiskit_opt0_40.qasm', 40, 1617, 7407, 5790, 390.89, 4.5807)
+(2, 'qpeinexact_nativegates_ibm_qiskit_opt0_50.qasm', 50, 2522, 16232, 13710, 1048.46, 6.4362)
+(4, 'qpeexact_nativegates_ibm_qiskit_opt0_50.qasm', 50, 2522, 16229, 13707, 1127.62, 6.435)
+(6, 'graphstate_nativegates_ibm_qiskit_opt0_100.qasm', 100, 100, 1048, 948, 3229.97, 10.48)
+(5, 'qpeinexact_nativegates_ibm_qiskit_opt0_100.qasm', 100, 10047, 87630, 77583, 24741.23, 8.722)
+(3, 'qpeexact_nativegates_ibm_qiskit_opt0_100.qasm', 100, 10047, 87630, 77583, 24908.6, 8.722)
+Sat Jul 13 23:34:50 2024
+over

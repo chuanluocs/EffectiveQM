@@ -25,7 +25,7 @@ DEVICE_NAME is the parameter used to specify the quantum device, and its enumera
 | `Q16`   | Q16        |
 | `GUADALUPE`      | IBM Guadalupe       |
 | `ROCHESTER`   | IBM Rochester        |
-| `19X19`      | 19X19       |
+| `torino`      | IBM Torino       |
 | `SYCAMORE`   | Google Sycamore        |
 
 ## Example Command for Running *EffectiveQM*
@@ -41,19 +41,23 @@ The directory named `src/` includes the implementation of *EffectiveQM*.
 
 ## Testing Benchmarks for Evaluating *EffectiveQM*
 
-The directory named `benchmarks/` contains all testing benchmarks‘ qasm files. 
+The directory named `benchmarks/` contains all testing benchmarks' qasm files. 
 
 ## Implementation of Main Competitors of *EffectiveQM*
 
-As mentioned in the paper, the main competitors of EffectiveQM are ILS,SAD2 and SID3.Their codes can be obtained from the following link.
+As mentioned in the paper, the main competitors of EffectiveQM are ILS, SAHS, FiDLS, Qiskit and Tket. Their codes can be obtained from the following link.
 
 - *ILS*: https://github.com/joyofly/ILS-QuantumCircuitMapper
 
-- *SAD2*: https://github.com/BensonZhou1991/circuittransform/
+- *SAHS*: https://github.com/BensonZhou1991/circuittransform/
 
-- *SID3*: https://github.com/BensonZhou1991/Qubit-Mapping-Subgraph-Isomorphismr
+- *FiDLS*: https://github.com/BensonZhou1991/Qubit-Mapping-Subgraph-Isomorphismr
 
-Among them, for the two stochastic algorithms ILS and SAD2, we have slightly modified the implementation of the random number generation part of them for generating reproducible experimental results.
+- *Qiskit*: https://github.com/Qiskit/qiskit-terra
+
+- *Tket*: https://github.com/CQCL/tket
+
+Among them, for the three stochastic algorithms ILS, SAHS and Qiskit, we have slightly modified the implementation of the random number generation part of them for generating reproducible experimental results.
 
 ## Experimental Results
 
@@ -61,12 +65,12 @@ The directory `result/` contains all the raw data tables after preliminary stati
 
 The directory is organized as follows:
 
-- [original_data](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data): Provides the original experimental results of *EffectiveQM*, *ILS*, *SAD2*, *SID3* on all devices.
-  - [EffectiveQM](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/EffectiveQM): the original experimental results of *EffectiveQM*.
-  - [ILS](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/ILS): the original experimental results of *ILS*.
-  - [SAD2](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/SAD2): the original experimental results of *SAD2*.
-  - [SID3](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/SID3): the original experimental results of *SID3*.
-- [excel](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel): Provides collated experimental data against tables in the paper.
+- [original_data](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data): Provides the original experimental results of *EffectiveQM*, *ILS*, *SAHS*, *FiDLS*, *Qiskit* and *Tket* on all devices.
+  - [RevLib](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/RevLib): the original experimental results on benchmark RevLib.
+  - [QV](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/QV): the original experimental results of benchmark QV.
+  - [QUEKNO](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/QUEKNO): the original experimental results of benchmark QUEKNO.
+  - [RW](https://github.com/chuanluocs/EffectiveQM/tree/main/result/original_data/RW): the original experimental results of benchmark RW.
+- [table](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table): Provides collated experimental data against tables in the paper.
   - [comp](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/comp): Comparison data between *EffectiveQM* and all competitors.
   - [cutoff](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/cutoff): The comparative data after taking strict time constraints (refer to the paper), that is the comparative data of the *EffectiveQM-short* version in the paper.
   - [abalation](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/abalation): Provides data for ablation analysis experiments.
@@ -76,3 +80,6 @@ The directory is organized as follows:
     - [lambda](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/lambda): Analyzing the experimental data on the hyperparameters of $\lambda$.
     - [delta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/delta): Analyzing the experimental data on the hyperparameters of $\delta$.
     - [theta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/hyper-para/theta)：Analyzing the experimental data on the hyperparameters of $\theta$.
+  - [discussion](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion): Experimental data for discussion experiments in paper.
+    - [discussion_on_bridge](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion/discussion_on_bridge): Experimental data for discussion of Bridge effectiveness.
+    - [discussion_on_more_benchmark](https://github.com/chuanluocs/EffectiveQM/tree/main/result/excel/discussion/discussion_on_more_benchmark): Experimental data discussed for more benchmark sets (i.e., RW, QUEKNO, and QV).

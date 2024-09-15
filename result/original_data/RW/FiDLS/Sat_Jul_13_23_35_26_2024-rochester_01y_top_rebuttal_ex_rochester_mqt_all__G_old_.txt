@@ -1,0 +1,9 @@
+('QFilter, GVal, SIZE, initial_mapping  =', '01y', True, 'all', 'top')
+('lev, slayer, gamma, stop, anchor =', 3, 0, 0, 10, True)
+In this test, we use Type 01y filter and top initial mapping for all circuits on rochester
+*****************************************
+Sat Jul 13 23:35:26 2024
+(2, 'qpeexact_nativegates_ibm_qiskit_opt0_50.qasm', 50, 2522, 16145, 13623, 206.61, 6.4017)
+(1, 'qpeinexact_nativegates_ibm_qiskit_opt0_50.qasm', 50, 2522, 16148, 13626, 237.27, 6.4029)
+Sat Jul 13 23:35:26 2024
+over
