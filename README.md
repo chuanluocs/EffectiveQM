@@ -90,4 +90,4 @@ The directory `example` contains examples of mode-aware search strategies from S
 
 The directory is organized as follows:
 - [example.txt](https://github.com/chuanluocs/EffectiveQM/tree/main/example/example.txt): Provide the complete examples mentioned in Section IV-B of the manuscript.
-- [readme.md](https://github.com/chuanluocs/EffectiveQM/tree/main/example/readme.md): Provides a detailed readme document to explains how to interpret the examples.
+- [readme.md](https://github.com/chuanluocs/EffectiveQM/tree/main/example/readme.md): Provide a detailed readme document to explain how to interpret the examples.
