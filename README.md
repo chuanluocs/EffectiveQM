@@ -1,4 +1,4 @@
-# owards Effective Local Search for Qubit Mapping Problem
+# Towards Effective Local Search for Qubit Mapping Problem
 
 *EffectiveQM* is an effective local search algorithm for solving qubit mapping problems. This repository contains the entire code implementation of *EffectiveQM*, the device coupling graph used in the experiment, the quantum circuits, raw data of experiments, and data tables after preliminary statistics.
 
