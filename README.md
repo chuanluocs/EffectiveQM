@@ -74,7 +74,7 @@ The directory is organized as follows:
   - [comp](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/comp): Comparison data between *EffectiveQM* and all competitors.
   - [abalation](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation): Provides data for ablation analysis experiments.
     - [abalation_for_Potential_Guided](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation/abalation_for_Potential_Guided): The experimental data of the ablation analysis of Potential-guided scoring Function, that is, the comparative data of the *Alt-2* version in the paper.
-    - [abalation_for_State_Aware](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation/abalation_for_State_Aware): The experimental data of the ablation analysis of State Aware, that is, the comparative data of the *Alt-1* version in the paper.
+    - [abalation_for_Mode_Aware](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/abalation/abalation_for_Mode_Aware): The experimental data of the ablation analysis of Mode Aware, that is, the comparative data of the *Alt-1* version in the paper.
   - [hyper-para](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para): Experimental data for hyperparameter analysis experiments.
     - [lambda](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para/lambda): Analyzing the experimental data on the hyperparameters of $\lambda$.
     - [delta](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/hyper-para/delta): Analyzing the experimental data on the hyperparameters of $\delta$.
@@ -82,3 +82,12 @@ The directory is organized as follows:
   - [discussion](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion): Experimental data for discussion experiments in paper.
     - [discussion_on_bridge](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion/discussion_on_bridge): Experimental data for discussion of Bridge effectiveness.
     - [discussion_on_more_benchmark](https://github.com/chuanluocs/EffectiveQM/tree/main/result/table/discussion/discussion_on_more_benchmark): Experimental data discussed for more benchmark sets (i.e., RW, QUEKNO, and QV).
+
+
+
+## The running examples mentioned in Section IV-B
+The directory `example` contains examples of mode-aware search strategies from Section IV-B of the manuscript.
+
+The directory is organized as follows:
+- [example.txt](https://github.com/chuanluocs/EffectiveQM/tree/main/example/example.txt): Provide the complete examples mentioned in Section IV-B of the manuscript.
+- [readme.md](https://github.com/chuanluocs/EffectiveQM/tree/main/example/readme.md): Provides a detailed readme document to explains how to interpret the examples.
