@@ -1,6 +1,6 @@
 # Towards Effective Local Search for Qubit Mapping Problem
 
-*EffectiveQM* is an effective local search algorithm for solving qubit mapping problems. This repository contains the entire code implementation of *EffectiveQM*, the device coupling graph used in the experiment, the quantum circuits, raw data of experiments, and data tables after preliminary statistics.
+*EffectiveQM* is an effective local search algorithm for solving qubit mapping problems. This repository contains the entire code implementation of *EffectiveQM*, the device coupling graph used in the experiment, the quantum circuits, full versions of the tables from the paper, and other data and tables related to the paper and *EffectiveQM*.
 
 ## Instructions for Building *EffectiveQM*
 
@@ -45,7 +45,7 @@ The directory named `benchmarks/` contains all testing benchmarks' qasm files.
 
 ## Implementation of Main Competitors of *EffectiveQM*
 
-As mentioned in the paper, the main competitors of EffectiveQM are ILS, SAHS, FiDLS, Qiskit and Tket. Their codes can be obtained from the following link.
+As mentioned in the paper, the main competitors of EffectiveQM are *ILS*, *SAHS*, *FiDLS*, *Qiskit*, *Tket*, *QMAP* and TB-*OLSQ2*. Their codes can be obtained from the following link.
 
 - *ILS*: https://github.com/joyofly/ILS-QuantumCircuitMapper
 
@@ -57,11 +57,22 @@ As mentioned in the paper, the main competitors of EffectiveQM are ILS, SAHS, Fi
 
 - *Tket*: https://github.com/CQCL/tket
 
-Among them, for the three stochastic algorithms ILS, SAHS and Qiskit, we have slightly modified the implementation of the random number generation part of them for generating reproducible experimental results.
+- *QMAP*: https://github.com/cda-tum/mqt-qmap
 
-## Experimental Results
+- *TB-OLSQ2*: https://github.com/WanHsuanLin/OLSQ2
 
-The directory `result/` contains all the raw data tables after preliminary statistics. 
+Among them, for the three stochastic algorithms *ILS*, *SAHS* and *Qiskit*, we have slightly modified the implementation of the random number generation part of them for generating reproducible experimental results.
+
+## Full Comparison *EffectiveQM* for EQM and All Competitors
+
+As we mentioned in Section V of the paper, we did not show the experimental results for *EffectiveQM* and *SAHS* due to space limits. To this end, we have placed the complete table containing the *SAHS* in the repository.
+
+The directory is organized as follows:
+- [full_table](https://github.com/chuanluocs/EffectiveQM/tree/main/full_table): Provides PDF file containing the original tables of the paper after added *SAHS*.
+
+## Other Experimental Results
+
+The directory `result/` contains the raw data after preliminary statistics. 
 
 The directory is organized as follows:
 
