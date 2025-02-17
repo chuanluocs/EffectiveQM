@@ -63,7 +63,7 @@ As mentioned in the paper, the main competitors of EffectiveQM are *ILS*, *SAHS*
 
 Among them, for the three stochastic algorithms *ILS*, *SAHS* and *Qiskit*, we have slightly modified the implementation of the random number generation part of them for generating reproducible experimental results.
 
-## Full Comparison *EffectiveQM* for EQM and All Competitors
+## Full Comparison for *EffectiveQM* and All Competitors
 
 As we mentioned in Section V of the paper, we did not show the experimental results for *EffectiveQM* and *SAHS* due to space limits. To this end, we have placed the complete table containing the *SAHS* in the repository.
 
