@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_Q16_16QBT_large_gate_opt1_0_1.5_no.0,16,9,EffectiveQM,0.0,0.09250000000000001,
 QUKENO_Q16_16QBT_large_gate_opt1_0_1.5_no.0,16,9,ILS,0.0,0.013600000000000001,
 QUKENO_Q16_16QBT_large_gate_opt1_0_1.5_no.0,16,9,Qiskit,0.3,0.2911349296569824,

@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_guadalupe_16QBT_large_gate_opt1_0_1.5_no.0,16,9,EffectiveQM_abalation_bridge,0.0,0.013300000000000001,
 QUKENO_guadalupe_16QBT_large_gate_opt1_0_1.5_no.0,16,9,EffectiveQM,0.0,0.1135,
 ,,,,,,

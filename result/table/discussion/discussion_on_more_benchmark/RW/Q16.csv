@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 ae_nativegates_ibm_qiskit_opt0_10,10,90,EffectiveQM,30.0,15.0761,
 ae_nativegates_ibm_qiskit_opt0_10,10,90,ILS,30.0,1.3973,
 ae_nativegates_ibm_qiskit_opt0_10,10,90,Qiskit,41.7,0.2794776678085327,

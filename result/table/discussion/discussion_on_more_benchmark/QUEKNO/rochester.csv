@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_rochester_53QBT_gate_Rochester_large_opt1_0_1.5_no.5,53,20,EffectiveQM,3.3,1001.7656000000001,
 QUKENO_rochester_53QBT_gate_Rochester_large_opt1_0_1.5_no.5,53,20,ILS,0.0,6.8153999999999995,
 QUKENO_rochester_53QBT_gate_Rochester_large_opt1_0_1.5_no.5,53,20,Qiskit,8.1,0.24342944622039794,

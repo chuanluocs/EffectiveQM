@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_sycamore_53QBT_gate_Sycamore_large_opt1_0_1.5_no.4,53,20,EffectiveQM_abalation_bridge,0.0,0.2092,
 QUKENO_sycamore_53QBT_gate_Sycamore_large_opt1_0_1.5_no.4,53,20,EffectiveQM,3.9,848.1148999999999,
 ,,,,,,

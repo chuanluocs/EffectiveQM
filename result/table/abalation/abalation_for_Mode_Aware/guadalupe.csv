@@ -1,7 +1,7 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 4gt13_92,5,30,EffectiveQM_abalation_mode_aware,24.0,0.8354000000000001,
 4gt13_92,5,30,EffectiveQM,24.0,0.4194444444444445,
-,,,,,,
+,,,,,,`
 4mod5-v1_22,5,11,EffectiveQM_abalation_mode_aware,6.0,0.38539999999999996,
 4mod5-v1_22,5,11,EffectiveQM,6.0,0.2581111111111111,
 ,,,,,,

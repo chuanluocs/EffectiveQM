@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 quantum_volume_10_loop0,10,150,EffectiveQM,40.2,41.419599999999996,
 quantum_volume_10_loop0,10,150,ILS,44.1,10.700800000000001,
 quantum_volume_10_loop0,10,150,Qiskit,53.4,0.8517840385437012,

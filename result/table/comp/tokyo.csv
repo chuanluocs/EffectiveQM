@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 4gt13_92,5,30,EffectiveQM,0.0,0.0009000000000000001,
 4gt13_92,5,30,ILS,0.0,3.825400000000002,
 4gt13_92,5,30,Qiskit,6.0,0.1855473279953003,

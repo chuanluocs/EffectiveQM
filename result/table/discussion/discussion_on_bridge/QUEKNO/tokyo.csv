@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_tokyo_20QBT_gate_Tokyo_large_opt1_0_1.5_no.0,20,11,EffectiveQM_abalation_bridge,0.0,0.009600000000000001,
 QUKENO_tokyo_20QBT_gate_Tokyo_large_opt1_0_1.5_no.0,20,11,EffectiveQM,0.0,0.3901,
 ,,,,,,

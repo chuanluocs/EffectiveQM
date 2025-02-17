@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 QUKENO_torino_133QBT_large_gate_opt1_0_1.5_no.0,133,72,EffectiveQM,65.4,3605.097,
 QUKENO_torino_133QBT_large_gate_opt1_0_1.5_no.0,133,72,ILS,111.0,239.87709999999998,
 QUKENO_torino_133QBT_large_gate_opt1_0_1.5_no.0,133,72,Qiskit,242.1,0.3825546741485596,

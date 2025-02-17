@@ -1,4 +1,4 @@
-benchmark,qubits,gates,name,added gate,time(s)
+benchmark,qubits,original CNOT gates,algorithm name,added CNOT gates,time(s)
 quantum_volume_10_loop0,10,150,EffectiveQM_abalation_bridge,128.7,37.0093,
 quantum_volume_10_loop0,10,150,EffectiveQM,131.7,294.48,
 ,,,,,,
